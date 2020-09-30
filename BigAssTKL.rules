@@ -1,0 +1,96 @@
+
+(rules PCB 1
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (eu.mihosoft.freerouting.autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 1253)
+    (layer_rule Top
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 3.8)
+    )
+    (layer_rule Bottom
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.4)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle Top 800.0 0.0 0.0)
+    )
+    (shape
+      (circle Bottom 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_800:400_um-row 1" "Via[0-1]_800:400_um" "row 1"
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (via_rule
+    "row 1" "Via[0-1]_800:400_um-row 1"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer Top Bottom)
+    )
+  )
+  (class "kicad_default"
+    "Net-(DF1-PadA)" "Net-(DF2-PadA)" "Net-(DF3-PadA)" "Net-(DF4-PadA)" "Net-(DF5-PadA)" "Net-(DF9-PadA)" "Net-(DF10-PadA)" "Net-(DF11-PadA)"
+    "Net-(DF12-PadA)" "Net-(D0-PadC)" "Net-(D2-PadA)" "Net-(DESC1-PadC)" "Net-(DDASH1-PadA)" "Net-(DBACKSPACE1-PadA)" "Net-(DDELETE1-PadC)" "Net-(DCAPSLOCK1-PadA)"
+    "Net-(DA1-PadC)" "Net-(DA1-PadA)" "Net-(DS1-PadA)" "Net-(DD1-PadA)" "Net-(DF13-PadA)" "Net-(DB1-PadC)" "Net-(DC1-PadA)" "Net-(DB1-PadA)"
+    "Net-(DBACKSLASH1-PadA)" "Net-(DALT1-PadC)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer Top Bottom)
+    )
+  )
+  (class "row 1"
+    "Net-(DZ1-PadA)"
+    (clearance_class "row 1")
+    (via_rule row 1)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer Top Bottom)
+    )
+  )
+)
