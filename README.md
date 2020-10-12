@@ -5,7 +5,7 @@ This is a TKL keyboard that uses the big ass enter style of enter key. It uses t
 This project is still a work in progress.
 
 # Refence Links
-USB Dauter Board:  https://www.aliexpress.com/item/32967652914.html
+USB Daughter Board:  https://www.aliexpress.com/item/32967652914.html
 
 Case:  https://www.aliexpress.com/item/32617566709.html
 
